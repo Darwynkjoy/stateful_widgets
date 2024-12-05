@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:statefulwidget/newcounter.dart';
-import 'package:statefulwidget/toggle.dart';
+import 'package:statefulwidget/changecolor.dart';
+import 'package:statefulwidget/textinput.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: Textinput(),
+      home: Changecolor(),
     );
   }
 }

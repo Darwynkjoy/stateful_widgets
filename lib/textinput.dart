@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-
-class Textinputscreen extends StatefulWidget{
+class TextInputScreen extends StatefulWidget{
   @override
-  State<Textinputscreen> createstate()=> _TextinputscreenState();
+  State<TextInputScreen> createState()=> _TextinputscreenState();
 }
-class _TextinputscreenState extends State<Textinputscreen>{
+class _TextinputscreenState extends State<TextInputScreen>{
+  String _text='';
+  void changeText(String val){
+    setState(() {
+      _text=val;
+    });
+  }
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -12,16 +17,22 @@ class _TextinputscreenState extends State<Textinputscreen>{
         title: Text("Text input screen"),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          TextField(
-            onChanged: changeText,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: "enter text",
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            TextField(
+              onChanged: changeText,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "enter text",
+              ),
             ),
-          )
-        ],
+            SizedBox(height: 20,),
+            Text("you typed:$_text",style: TextStyle(fontSize: 20),
+            )
+          ],
+        ),
       ),
     );
   }
